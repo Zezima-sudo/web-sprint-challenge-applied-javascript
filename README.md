@@ -28,13 +28,19 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is the DOM?
 
+The DOM is the device object model that treats HTML documents as tree structures.
+
 2. What is an event?
+
+An event is anything that happens on a page that causes a function to execute through a callback. e.g. clicking on an object triggers an event by function callback.
 
 3. What is an event listener?
 
+Event listeners wait for a specific action to occur on the page, notated by .createEventListener and it looks for a key word inside of a string in the form of 'click', for example. when said event occurs a callback function is triggered.
 4. Why would we convert a NodeList into an Array?
-
+We would convert a nodelist into an array so that we could better organize/control the data, and give us access to array methods 
 5. What is a component?
+a component is a function that creates a template of objects on a page, usually taking an argument where you would pass in data to fill the objects image sources, text content etc. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
