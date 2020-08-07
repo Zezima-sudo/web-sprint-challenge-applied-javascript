@@ -22,3 +22,63 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function constructor() {
+  const imageObj = {
+    0: "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg",
+    1: "https://tk-assets.lambdaschool.com/8aa075b0-67cf-47ce-9a7f-8cc9d754675d_computer.jpeg",
+    2: "https://tk-assets.lambdaschool.com/5b7441c6-6e4b-4feb-a4ec-8dd2eb76238a_trees.jpeg",
+    3: "https://tk-assets.lambdaschool.com/0b770382-d0eb-4465-8bf2-692a79fcda71_turntable.jpeg",
+  };
+
+  let imageIndex = 0;
+  //objects
+  const carousel = document.createElement("div");
+  const leftButton = document.createElement("div");
+  leftButton.classList.add("left-button");
+  const rightButton = document.createElement("div");
+  rightButton.classList.add("right-button");
+  const caroImg = document.createElement("img");
+
+  //classes
+  carousel.classList.add("carousel");
+  // leftButton.textContent = "left";
+  // rightButton.textContent = "right";
+
+  caroImg.src = imageObj[imageIndex];
+  function increment() {
+    console.log("+");
+    if (imageIndex === 3) {
+      imageIndex = 0;
+    } else {
+      imageIndex = imageIndex + 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
+
+  function decrement() {
+    console.log("-");
+    if (imageIndex === 0) {
+      imageIndex = 3;
+    } else {
+      imageIndex = imageIndex - 1;
+    }
+    caroImg.src = imageObj[imageIndex];
+  }
+
+  leftButton.onclick = decrement;
+  rightButton.onclick = increment;
+  //src
+
+  //append
+  carousel.append(caroImg, leftButton, rightButton);
+
+  //return
+  return carousel;
+}
+
+const entryPoint = document.querySelector(".carousel-container");
+
+const caro = constructor();
+// entryPoint.append(constructor());
+entryPoint.appendChild(caro);
